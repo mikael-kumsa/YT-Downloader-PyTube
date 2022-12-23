@@ -3,6 +3,7 @@ from pytube import YouTube
 def Download(link):
     youtubeOject = YouTube(link)
     youtubeOject = youtubeOject.streams.get_highest_resolution()
+    x = youtubeOject.on_progress("")
     try:
         youtubeOject.download()
     except:
